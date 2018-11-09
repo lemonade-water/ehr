@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>main</servlet-name>
+        <jsp-file>/WEB-INF/view/main.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>left</servlet-name>
+        <jsp-file>/WEB-INF/view/left.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>left</servlet-name>
+        <url-pattern>/left</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>top</servlet-name>
+        <jsp-file>/WEB-INF/view/top.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>top</servlet-name>
+        <url-pattern>/top</url-pattern>
+    </servlet-mapping>
+
+
+    <!--lbf-->
+    <!--MenusController-->
+    <servlet>
+        <servlet-name>MenusController</servlet-name>
+        <servlet-class>com.neusoft.ehr.controller.MenusController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MenusController</servlet-name>
+        <url-pattern>*.mdo</url-pattern>
+    </servlet-mapping>
+    <!--RolesController-->
+    <servlet>
+        <servlet-name>RolesController</servlet-name>
+        <servlet-class>com.neusoft.ehr.controller.RolesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RolesController</servlet-name>
+        <url-pattern>*.rdo</url-pattern>
+    </servlet-mapping>
+    <!--RolesMenusController-->
+    <servlet>
+        <servlet-name>RolesMenusController</servlet-name>
+        <servlet-class>com.neusoft.ehr.controller.RolesMenusController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RolesMenusController</servlet-name>
+        <url-pattern>*.rmdo</url-pattern>
+    </servlet-mapping>
+    <!--UserController-->
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>com.neusoft.ehr.controller.UserController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>*.udo</url-pattern>
+    </servlet-mapping>
+    <!--UsersRolesController-->
+    <servlet>
+        <servlet-name>UsersRolesController</servlet-name>
+        <servlet-class>com.neusoft.ehr.controller.UsersRolesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsersRolesController</servlet-name>
+        <url-pattern>*.urdo</url-pattern>
+    </servlet-mapping>
+    <!-- TalentsContoller -->
+    <servlet>
+        <servlet-name>TalentsContoller</servlet-name>
+        <servlet-class>com.neusoft.ehr.controller.TalentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TalentsContoller</servlet-name>
+        <url-pattern>*.tdo</url-pattern>
+    </servlet-mapping>
+
+
+
+    <filter>
+        <filter-name>SessionFilter</filter-name>
+        <filter-class>com.neusoft.redissession.web.RedisSessionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SessionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.neusoft.ehr.sys.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>

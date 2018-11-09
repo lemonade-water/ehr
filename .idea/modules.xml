@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../byeKotlin/ByeKolin.iml" filepath="$PROJECT_DIR$/../byeKotlin/ByeKolin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Redis/Redis.iml" filepath="$PROJECT_DIR$/../Redis/Redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../selfStudy/selfStudy.iml" filepath="$PROJECT_DIR$/../selfStudy/selfStudy.iml" />
+    </modules>
+  </component>
+</project>
